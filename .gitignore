@@ -4,3 +4,11 @@
 # Ignore local build caches if any
 .boris-cache/
 .boris-stage/
+
+# Ignore local credentials, scratch files, and logs
+.env
+.env.*
+!.env.example
+.tmp/
+.worktrees/
+*.log

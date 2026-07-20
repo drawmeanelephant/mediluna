@@ -39,6 +39,14 @@ prompt-history/
 
 This repository contains official artwork, prompts, brand assets, wallpapers, stickers, and reference material.
 
+The local CI check is:
+
+```sh
+./scripts/ci-check.sh
+```
+
+It runs the checked-in Boris build from clean temporary copies, validates required page and character assets, checks generated internal references, and confirms deterministic output across two builds.
+
 ---
 
 ## Canon
