@@ -1,0 +1,6 @@
+# Ignore system files
+.DS_Store
+
+# Ignore local build caches if any
+.boris-cache/
+.boris-stage/
