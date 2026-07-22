@@ -31,8 +31,8 @@
   --shadow-glow: 0 0 25px rgba(245, 53, 0, 0.2); /* Red bandana glow */
 
   /* Fonts */
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -42,6 +42,93 @@
   --border-radius-md: 16px;
   --border-radius-lg: 24px;
   --border-radius-round: 50%;
+}
+
+/* --- Mediluna Field Guide page --- */
+.field-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 156px 0 84px;
+  background: linear-gradient(135deg, #f7f2df 0%, #eef2df 58%, #dce7d2 100%);
+  color: #24372f;
+}
+
+.field-hero::before,
+.field-hero::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(49, 91, 67, .14);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.field-hero::before { width: 460px; height: 460px; top: -250px; left: -160px; }
+.field-hero::after { width: 680px; height: 680px; right: -330px; bottom: -390px; }
+
+.field-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .82fr); gap: clamp(40px, 7vw, 100px); align-items: center; position: relative; z-index: 1; }
+.field-hero-copy { max-width: 640px; }
+.field-kicker, .guide-number { color: #a84832; font-size: .72rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.field-kicker { margin-bottom: 22px; }
+.field-hero h1, .field-section-heading h2, .trail-note h2, .artifact-section h2 { font-family: var(--font-display); letter-spacing: -.045em; line-height: .98; }
+.field-hero h1 { max-width: 580px; font-size: clamp(4rem, 8vw, 7.6rem); font-weight: 800; }
+.field-hero h1 em { color: #bd4936; font-style: normal; }
+.field-hero-lede { max-width: 520px; margin: 30px 0 16px; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.35; }
+.field-hero-body { max-width: 530px; color: #496158; font-size: 1rem; }
+.field-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin: 34px 0 44px; }
+.field-hero .btn-primary { background: #bd4936; box-shadow: 0 10px 24px rgba(133, 54, 38, .18); }
+.text-link { color: #315b43; font-weight: 800; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.text-link:hover { color: #a84832; }
+.field-facts { display: flex; flex-wrap: wrap; gap: 28px; margin: 0; }
+.field-facts div { min-width: 135px; }
+.field-facts dt { color: #6d8274; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.field-facts dd { margin-top: 5px; color: #24372f; font-size: .92rem; font-weight: 700; }
+.field-hero-art { margin: 0; }
+.art-frame { position: relative; padding: 12px; background: #fffdf4; border: 1px solid rgba(49, 91, 67, .15); box-shadow: 16px 18px 0 rgba(49, 91, 67, .12); transform: rotate(2deg); }
+.art-frame::before { content: ''; position: absolute; inset: 14px; border: 1px solid rgba(168, 72, 50, .28); pointer-events: none; z-index: 1; }
+.art-frame img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.field-hero figcaption { max-width: 370px; margin: 22px auto 0; color: #5f7468; font-size: .8rem; line-height: 1.5; text-align: center; }
+.caption-mark { color: #bd4936; margin-right: 7px; }
+.field-guide-section, .artifact-section { background: #fffdf7; color: #24372f; }
+.field-guide-section { padding: 108px 0 116px; }
+.field-section-heading { max-width: 620px; margin-bottom: 48px; }
+.field-section-heading h2, .artifact-section h2 { margin-bottom: 18px; font-size: clamp(2.6rem, 5vw, 4.5rem); }
+.field-section-heading > p:last-child, .artifact-copy { max-width: 530px; color: #62776b; font-size: 1.05rem; }
+.guide-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; }
+.guide-card { position: relative; min-height: 310px; padding: 30px; background: #f2f1e5; border: 1px solid rgba(49, 91, 67, .13); border-radius: 3px; }
+.guide-card:nth-child(2) { background: #e9f0e4; }
+.guide-card:nth-child(3) { background: #f9eee5; }
+.guide-card h3 { max-width: 250px; margin: 34px 0 14px; color: #24372f; font-family: var(--font-display); font-size: 1.75rem; line-height: 1.05; }
+.guide-card > p:not(.guide-number):not(.voice-note) { color: #5d7166; font-size: .94rem; }
+.guide-stamp { position: absolute; right: 24px; bottom: 22px; display: grid; place-items: center; width: 78px; height: 78px; border: 1px solid #bd4936; border-radius: 50%; color: #bd4936; font-size: .56rem; font-weight: 800; letter-spacing: .08em; line-height: 1.3; text-align: center; text-transform: uppercase; transform: rotate(-12deg); }
+.voice-note { margin-top: 26px; padding: 14px 16px; border-left: 3px solid #bd4936; color: #315b43; font-family: var(--font-display); font-size: 1.05rem; line-height: 1.25; }
+.carry-list { display: grid; gap: 17px; margin: 34px 0 0; padding: 0; color: #4e6759; list-style: none; font-size: .94rem; }
+.carry-list span { margin-right: 9px; color: #bd4936; }
+.trail-note { color: #fffdf7; background: linear-gradient(100deg, rgba(25, 52, 40, .94), rgba(44, 80, 57, .8)), url('wallpapers/wallpaper_adventure.png') center/cover; }
+.trail-note-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; min-height: 380px; padding-top: 80px; padding-bottom: 80px; }
+.trail-note .field-kicker { color: #f0b49b; }
+.trail-note h2 { max-width: 670px; margin-bottom: 20px; font-size: clamp(2.7rem, 6vw, 5.3rem); }
+.trail-note p:last-child { max-width: 520px; color: #dbe9db; font-size: 1.05rem; }
+.trail-note-mark { display: grid; place-items: center; min-width: 94px; height: 94px; border: 1px solid rgba(255, 253, 247, .5); border-radius: 50%; color: #f0b49b; font-size: 2rem; transform: rotate(12deg); }
+.artifact-section { padding: 100px 0; }
+.artifact-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; }
+.artifact-section .btn { margin-top: 32px; color: #24372f; border-color: rgba(49, 91, 67, .25); }
+.artifact-preview { display: block; overflow: hidden; color: #24372f; background: #f2f1e5; border: 1px solid rgba(49, 91, 67, .15); text-decoration: none; }
+.artifact-preview img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .5s ease; }
+.artifact-preview span { display: block; padding: 15px 18px; font-size: .86rem; font-weight: 800; }
+.artifact-preview:hover img { transform: scale(1.04); }
+
+@media (max-width: 780px) {
+  .field-hero { padding-top: 120px; }
+  .field-hero-grid, .artifact-grid { grid-template-columns: 1fr; gap: 54px; }
+  .field-hero-art { max-width: 520px; margin: 0 auto; }
+  .guide-grid { grid-template-columns: 1fr; }
+  .guide-card { min-height: 250px; }
+  .trail-note-inner { min-height: 420px; align-items: flex-start; flex-direction: column; justify-content: center; }
+  .trail-note-mark { min-width: 70px; height: 70px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artifact-preview img { transition: none; }
 }
 
 /* Light Theme Overrides (Otter Cream Theme) */
@@ -392,6 +479,114 @@ body.light-theme .moon-icon { display: block; }
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
+
+/* --- Markdown neighborhood pages --- */
+.main-content-area > h1 {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 150px 24px 18px;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-content-area > h1 + p,
+.main-content-area > h1 + p + p {
+  max-width: 920px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.main-content-area > h1 + p {
+  color: var(--accent-orange);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.main-content-area > h1 + p + p {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  margin-top: 20px;
+}
+
+.main-content-area > blockquote,
+.main-content-area > h2,
+.main-content-area > h3,
+.main-content-area > h2 ~ p,
+.main-content-area > h2 ~ ul,
+.main-content-area > h2 ~ hr,
+.main-content-area > h1 ~ p:not(:first-of-type) {
+  max-width: 920px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.main-content-area > blockquote {
+  margin-top: 34px;
+  margin-bottom: 70px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border-top: 1px solid var(--border-glass-focused);
+  border-bottom: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+.main-content-area > h2 {
+  margin-top: 58px;
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+
+.main-content-area > h2 ~ p { color: var(--text-secondary); }
+.main-content-area > h2 ~ h3 { margin-top: 42px; }
+.main-content-area > h3 {
+  margin-bottom: 12px;
+  padding-top: 22px;
+  padding-bottom: 8px;
+  border-top: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+}
+
+.main-content-area > h3 + p,
+.main-content-area > h3 + p + ul,
+.main-content-area > h3 + p + p,
+.main-content-area > h3 + p + p + p,
+.main-content-area > h3 + p + p + ul {
+  color: var(--text-secondary);
+}
+
+.main-content-area > ul {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  color: var(--text-secondary);
+}
+
+.main-content-area > hr {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  border: 0;
+  border-top: 1px solid var(--border-glass);
+}
+
+.main-content-area > p a,
+.main-content-area > li a { color: var(--accent-blue); font-weight: 700; text-underline-offset: 3px; }
 
 /* --- Friends & Agents Neighborhood --- */
 .agents-hero { padding-top: 150px; background: linear-gradient(180deg, rgba(52, 152, 219, 0.06), transparent 80%); }
