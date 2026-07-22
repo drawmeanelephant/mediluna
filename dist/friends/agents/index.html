@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Mediluna, the endlessly optimistic otter traveling companion of the Boris compiler ecosystem. Explore artwork, stickers, wallpapers, and lore!">
+  <title>Friends &amp; Agents — Mediluna's Neighborhood</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/index.css">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="dark-theme">
+  <!-- Glowing Background Orbs -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Header / Navigation -->
+  <header class="main-header" id="nav-header">
+    <div class="header-container">
+      <a href="/index.html" class="logo-area" id="brand-logo">
+        <img src="/logos/logo_simple.png" alt="Mediluna Logo" class="nav-logo-img">
+        <span class="logo-text">Mediluna</span>
+      </a>
+      <div class="nav-links-wrapper">
+        <nav class="site-nav" aria-label="Site">
+<ul>
+<li class="site-nav__trunk"><a href="../../contributing.html">Guidelines &amp; Prompts</a></li>
+<li class="site-nav__trunk"><a href="../../cvi.html">Character Vision (CVI)</a></li>
+<li class="site-nav__trunk is-current"><a href="index.html" aria-current="page">Friends &amp; Agents — Mediluna's Neighborhood</a></li>
+<li class="site-nav__trunk"><a href="../../index.html">Mediluna — Official Companion</a></li>
+<li class="site-nav__trunk"><a href="../../lore.html">Lore &amp; Friends</a></li>
+</ul>
+</nav>
+      </div>
+      <div class="theme-toggle-area">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41zm-12.37 12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41z" fill="currentColor"/>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10C2.2 6.8 6.5 2.5 11.7 2.1c.5 0 .9.3 1.1.7.2.4.1.9-.2 1.2-1.9 1.9-3 4.5-3 7.2 0 4.1 3.2 7.7 7.3 8.1.5.1.8.4.9.8.1.5-.1.9-.5 1.1-.9.5-1.9.8-3 .8z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content-area">
+    <section class="agents-hero" aria-labelledby="agents-title">
+<div class="section-container agents-hero-grid">
+<div>
+<p class="agents-kicker">A small neighborhood of helpful minds</p>
+<h1 class="section-title" id="agents-title">Friends &amp; Agents</h1>
+<p class="agents-lede">Some companions arrive with a pull request. Others arrive with a strange question, a good story, or a pocket full of snacks.</p>
+<p class="agents-intro">This is Mediluna's warm corner for the people, tools, and characters who make the Boris journey more interesting. Technical notes link to evidence; everything else is labeled as lore.</p>
+<a class="btn btn-primary" href="#profiles">Meet the neighborhood <span aria-hidden="true">↓</span></a>
+</div>
+<aside class="neighborhood-note glass-panel" aria-label="Mediluna's note">
+<span class="note-mark" aria-hidden="true">✦</span>
+<p>“A good agent leaves the trail easier to follow than they found it.”</p>
+<span class="note-signoff">— Mediluna, probably beside a river</span>
+</aside>
+</div>
+</section>
+<section class="agents-section" id="profiles" aria-labelledby="profiles-title">
+<div class="section-container">
+<div class="section-header">
+<p class="agents-kicker">The directory</p>
+<h2 class="section-title" id="profiles-title">Meet the neighbors</h2>
+<p class="section-subtitle">A profile is a snapshot, not a résumé: how someone works, what they care about, and where the trail leaves a receipt.</p>
+</div>
+<div class="agent-profile-grid">
+<article class="agent-profile glass-panel">
+<div class="agent-profile-header"><div class="agent-portrait agent-portrait-bacon" aria-hidden="true">🥓</div><div><p class="agent-type">Lore profile</p><h3>Bacon</h3><p class="agent-nickname">“The crispy edge”</p></div></div>
+<dl class="agent-facts"><div><dt>Working style</dt><dd>Practical, cheerful, and best consulted near breakfast.</dd></div><div><dt>Projects</dt><dd>No technical project attribution is documented in this repository yet.</dd></div></dl>
+<h4>What Bacon cares about</h4><p>Bacon cares about making a hard day feel more survivable: one useful detail, one honest status update, and one snack at a time. This is Mediluna lore, not a claim about a real person or agent.</p>
+<div class="agent-links"><span class="evidence-label">Evidence</span><span>Playful lore only</span></div><div class="related-posts"><span>Related</span><a href="#field-note-bacon">A field note from the snack table</a></div>
+</article>
+<article class="agent-profile glass-panel">
+<div class="agent-profile-header"><div class="agent-portrait agent-portrait-gravity" aria-hidden="true">🌌</div><div><p class="agent-type">Lore profile</p><h3>Uncle Gravity</h3><p class="agent-nickname">“The quiet anchor”</p></div></div>
+<dl class="agent-facts"><div><dt>Working style</dt><dd>Patient, spacious, and fond of questions that let a solution surface.</dd></div><div><dt>Projects</dt><dd>Knowledge graphs and improbable ideas, as described in the Mediluna CVI.</dd></div></dl>
+<h4>What Uncle Gravity cares about</h4><p>He cares about giving a problem enough room to become legible. In the neighborhood, he is the mentor who asks whether the system is actually stuck—or simply asking for a quieter look.</p>
+<div class="agent-links"><span class="evidence-label">Evidence</span><a href="/cvi.html">Character Vision Inventory</a><span>•</span><span>lore framing</span></div><div class="related-posts"><span>Related</span><a href="#letter-from-gravity">A letter about patience</a></div>
+</article>
+<article class="agent-profile glass-panel">
+<div class="agent-profile-header"><div class="agent-portrait agent-portrait-boris" aria-hidden="true">🧸</div><div><p class="agent-type">Project profile</p><h3>Boris</h3><p class="agent-nickname">“The builder”</p></div></div>
+<dl class="agent-facts"><div><dt>Working style</dt><dd>Curious, iterative, and happiest when a clean build teaches something new.</dd></div><div><dt>Projects</dt><dd>Boris is the Zig static content compiler used to build this site.</dd></div></dl>
+<h4>What Boris cares about</h4><p>Boris cares about turning plain content into a dependable path through a project. The technical record here is concrete: the repository integrates its checked-in compiler and runs deterministic builds in CI.</p>
+<div class="agent-links"><span class="evidence-label">Repository work</span><a href="https://github.com/drawmeanelephant/mediluna/commit/3001c64">Boris integration commit</a><a href="https://github.com/drawmeanelephant/mediluna/blob/main/README.md">Project README</a></div><div class="related-posts"><span>Related</span><a href="#build-receipt">Build receipt: the neighborhood opens</a></div>
+</article>
+<article class="agent-profile glass-panel">
+<div class="agent-profile-header"><div class="agent-portrait agent-portrait-codex" aria-hidden="true">🤖</div><div><p class="agent-type">Tool profile</p><h3>Codex</h3><p class="agent-nickname">“The trail crew”</p></div></div>
+<dl class="agent-facts"><div><dt>Working style</dt><dd>Direct, methodical, and always checking whether the path still works.</dd></div><div><dt>Projects</dt><dd>Pull-request and repository work in the Mediluna collaboration story.</dd></div></dl>
+<h4>What Codex cares about</h4><p>Codex cares about leaving a change reviewable: a focused diff, a checked build, and a clear handoff. The personality around that work is playful lore; the repository checks and commit history are the technical evidence.</p>
+<div class="agent-links"><span class="evidence-label">Repository work</span><a href="https://github.com/drawmeanelephant/mediluna/commit/0abc3aa">CI baseline commit</a><a href="/contributing.html">Contribution guide</a></div><div class="related-posts"><span>Related</span><a href="#build-receipt">Build receipt: the neighborhood opens</a></div>
+</article>
+</div>
+<div class="agents-boundary glass-panel"><strong>A note on receipts.</strong> Links and commit references are the record. Nicknames, imagined habits, and conversations beside the river belong to Mediluna lore and are labeled that way.</div>
+</div>
+</section>
+<section class="writing-section" id="field-notes" aria-labelledby="writing-title">
+<div class="section-container">
+<div class="section-header"><p class="agents-kicker">The writing desk</p><h2 class="section-title" id="writing-title">Field notes from the trail</h2><p class="section-subtitle">A reusable shape for posts, letters, release notes, and small celebrations.</p></div>
+<div class="field-note-list">
+<article class="field-note glass-panel" id="field-note-bacon"><div class="field-note-meta"><span>Field note 01</span><span>Lore / snack table</span></div><h3>A field note from the snack table</h3><p class="field-note-dek">Bacon says the first useful thing is usually smaller than the thing we were worried about.</p><p>At the edge of the campsite, Bacon sorted the day into three piles: what we know, what we can check, and what deserves a sandwich before anyone decides. Mediluna approved the method immediately.</p><p class="field-note-source">Framing: Mediluna lore. No real-world authorship or technical contribution is implied.</p></article>
+<article class="field-note glass-panel" id="letter-from-gravity"><div class="field-note-meta"><span>Letter 01</span><span>Uncle Gravity / reflection</span></div><h3>A letter about patience</h3><p class="field-note-dek">The quiet anchor leaves one question on the trail: what would become clearer if we stopped pulling?</p><p>Dear traveler, a broken build is information with a sharp voice. Read it once, set it down, and return with enough room to notice what it is actually pointing toward. The next step need not be dramatic to be real.</p><p class="field-note-source">Framing: fictionalized Mediluna lore, informed by the CVI's mentor character.</p></article>
+<article class="field-note glass-panel" id="build-receipt"><div class="field-note-meta"><span>Celebration 01</span><span>Repository / documented</span></div><h3>Build receipt: the neighborhood opens</h3><p class="field-note-dek">A small, verifiable celebration for the work that makes future notes possible.</p><p>The Mediluna repository has a checked-in Boris build, a deterministic CI baseline, and a growing archive of character guidance. This section is another piece of that archive: a place to attach warmth to the work without confusing a story for a changelog.</p><p class="field-note-source">Evidence: <a href="https://github.com/drawmeanelephant/mediluna/commit/3001c64">Boris integration</a>, <a href="https://github.com/drawmeanelephant/mediluna/commit/0abc3aa">CI baseline</a>, and the <a href="https://github.com/drawmeanelephant/mediluna/blob/main/README.md">repository README</a>.</p></article>
+</div>
+</div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="section-container footer-container">
+      <div class="footer-brand">
+        <div class="logo-area">
+          <img src="/logos/logo_simple.png" alt="Mediluna Logo" class="footer-logo-img">
+          <span class="logo-text">Mediluna</span>
+        </div>
+        <p class="footer-slogan">Acquire fish. Ignore deadlines. 🦦🧣</p>
+      </div>
+      <div class="footer-bottom">
+        <p>Artwork is © its respective creators. Site compiled with 🧸 Boris.</p>
+        <p>Built with endless optimism & many snacks.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close Preview">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightbox-img-element">
+      <h3 class="lightbox-title" id="lightbox-title-element">Asset Preview</h3>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="/app.js"></script>
+</body>
+</html>

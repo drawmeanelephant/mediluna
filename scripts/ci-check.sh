@@ -62,28 +62,24 @@ check_output() {
 
 validate_internal_references() {
   local ref path target file
-  while IFS= read -r ref; do
-    case "$ref" in
-      ""|\#*|http://*|https://*|//*|mailto:*|javascript:*|data:*) continue ;;
-    esac
-    path=${ref%%\?*}
-    path=${path%%\#*}
-    [ -n "$path" ] || continue
-    case "$path" in
-      /*) target="$tmp_dir/dist$path" ;;
-      *) target="$tmp_dir/dist/$path" ;;
-    esac
-    if [ ! -f "$target" ]; then
-      echo "broken internal reference: $ref" >&2
-      exit 1
-    fi
-  done < <(
-    while IFS= read -r file; do
-      grep -Eo '(href|src)="[^"]+"' "$file" || true
-    done < <(find "$tmp_dir/dist" -type f -name '*.html' -print) |
-      sed -E 's/.*(href|src)="([^"]+)"/\2/' |
-      sort -u
-  )
+  while IFS= read -r file; do
+    while IFS= read -r ref; do
+      case "$ref" in
+        ""|\#*|http://*|https://*|//*|mailto:*|javascript:*|data:*) continue ;;
+      esac
+      path=${ref%%\?*}
+      path=${path%%\#*}
+      [ -n "$path" ] || continue
+      case "$path" in
+        /*) target="$tmp_dir/dist$path" ;;
+        *) target="$(dirname "$file")/$path" ;;
+      esac
+      if [ ! -f "$target" ]; then
+        echo "broken internal reference: $ref" >&2
+        exit 1
+      fi
+    done < <(grep -Eo '(href|src)="[^"]+"' "$file" | sed -E 's/.*(href|src)="([^"]+)"/\2/' | sort -u)
+  done < <(find "$tmp_dir/dist" -type f -name '*.html' -print)
 }
 
 hash_output() {
