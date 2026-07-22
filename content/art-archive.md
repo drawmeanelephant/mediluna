@@ -63,6 +63,38 @@ The archive’s next three records are now tracked as source assets:
 
 > **Lore note:** Mediluna and Uncle Gravity work with different frontier models, but friendship doesn’t require the same architecture—just mutual respect, good questions, and a willingness to share cake.
 
+### The trail remembers her boots
+
+*Backstory · Mediluna lore*
+
+Mediluna’s favorite trail is the one that still has a little mystery left in it. She hikes with a fish-shaped map, a backpack full of snacks, and the firm belief that every forest path eventually leads to something worth celebrating. The redwoods are not technically on the way to the Boris project, but Mediluna has never let geography settle an important question.
+
+**Framing:** Fictionalized Mediluna lore. The image and its visual details are documented; the backstory is invented for the archive.
+
+### The umbrella agreement
+
+*Field note · Mediluna lore*
+
+During one particularly dramatic storm, Mediluna found a small robot blinking beside the trail markers. The robot had a map, three emergency procedures, and no umbrella. Mediluna had one umbrella, two boots, and no interest in leaving anyone behind. They walked until the rain softened, stopping whenever the robot discovered a new blue trail light.
+
+**Framing:** Fictionalized Mediluna lore. The robot is an unnamed story companion, not a documented repository contributor.
+
+### The sign was already leaning
+
+*Build note · Boris-adjacent lore*
+
+The trail sign was already leaning when Mediluna arrived. This is her official account, and the toolbox declines to contradict it. She tightened the bolts, reset the direction toward the next useful thing, and left the sign a little sturdier than she found it. Somewhere nearby, a compiler warning became a future task instead of a crisis.
+
+**Framing:** The Zig mark and backpack are visible project imagery; the repair story and compiler metaphor are playful Mediluna lore, not a literal changelog.
+
+### The cake has a deployment window
+
+*Celebration · Mediluna and Uncle Gravity lore*
+
+Mediluna carried the fish cake because she was the only one trusted to arrive with both the cake and the cake still on the plate. Uncle Gravity handled the guest list, the weather, and the difficult work of reminding everyone that a celebration can take its time. The birds brought music. The raccoons brought opinions. Mediluna brought frosting on her nose.
+
+**Framing:** Fictionalized neighborhood lore. Uncle Gravity’s presence is a character relationship, not a claim about a real person or model.
+
 ## The neighborhood inventory
 
 The first pass now covers eight assets: the original mascot art, avatar, sticker, wallpaper, and logo, plus three shared story images. The page above gives two assets the full gallery treatment and records the new trio as linked field notes so future metadata work can grow by example instead of by guesswork.
