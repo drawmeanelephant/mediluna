@@ -89,6 +89,45 @@
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
       "related_project": "Mediluna / Boris ecosystem",
       "related_character": "Mediluna"
+    },
+    {
+      "path": "art/mediluna-hiking-forest.jpeg",
+      "title": "Mediluna hiking through the redwoods",
+      "creator": "Not recorded; Mediluna project asset",
+      "date_or_era": "Undated; shared 2026 repository asset",
+      "medium": "Digital character illustration, JPEG",
+      "dimensions": "896 × 1200 px",
+      "color_profile": "RGB; no embedded ICC profile reported",
+      "source_provenance": "Shared Mediluna artwork; tracked asset at art/mediluna-hiking-forest.jpeg",
+      "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving; request permission before treating this as open-licensed artwork.",
+      "related_project": "Mediluna / Boris ecosystem",
+      "related_character": "Mediluna"
+    },
+    {
+      "path": "art/mediluna-trail-guide-umbrella.jpeg",
+      "title": "Mediluna guides a robot through the storm",
+      "creator": "Not recorded; Mediluna project asset",
+      "date_or_era": "Undated; shared 2026 repository asset",
+      "medium": "Digital character illustration, JPEG",
+      "dimensions": "1376 × 768 px",
+      "color_profile": "RGB; no embedded ICC profile reported",
+      "source_provenance": "Shared Mediluna artwork; tracked asset at art/mediluna-trail-guide-umbrella.jpeg",
+      "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving; request permission before treating this as open-licensed artwork.",
+      "related_project": "Mediluna / Boris ecosystem",
+      "related_character": "Mediluna and an unnamed trail robot"
+    },
+    {
+      "path": "art/mediluna-fish-cake-birthday.jpeg",
+      "title": "Mediluna carries the fish cake",
+      "creator": "Not recorded; Mediluna project asset",
+      "date_or_era": "Undated; shared 2026 repository asset",
+      "medium": "Digital character celebration illustration, JPEG",
+      "dimensions": "1376 × 768 px",
+      "color_profile": "RGB; no embedded ICC profile reported",
+      "source_provenance": "Shared Mediluna artwork; tracked asset at art/mediluna-fish-cake-birthday.jpeg",
+      "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving; request permission before treating this as open-licensed artwork.",
+      "related_project": "Mediluna / Boris ecosystem",
+      "related_character": "Mediluna and Uncle Gravity"
     }
   ]
 }

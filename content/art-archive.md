@@ -53,6 +53,16 @@ Mediluna’s artwork is made to be joyful, but a joyful archive can still tell y
 
 The full five-asset inventory lives in the [deterministic metadata sidecar](metadata/assets.json). The field definitions and privacy rules are in the [metadata vocabulary](metadata/vocabulary.md).
 
+## New field notes from the trail
+
+The archive’s next three records are now tracked as source assets:
+
+- [Mediluna hiking through the redwoods](art/mediluna-hiking-forest.jpeg) — the joyful trail guide in her natural habitat.
+- [Mediluna guides a robot through the storm](art/mediluna-trail-guide-umbrella.jpeg) — capable, generous, and carrying the larger umbrella.
+- [Mediluna carries the fish cake](art/mediluna-fish-cake-birthday.jpeg) — a neighborhood celebration with Uncle Gravity and friends.
+
+> **Lore note:** Mediluna and Uncle Gravity work with different frontier models, but friendship doesn’t require the same architecture—just mutual respect, good questions, and a willingness to share cake.
+
 ## The neighborhood inventory
 
-The first pass covers the complete current image set: mascot art, avatar, sticker, wallpaper, and logo. The page above only gives two assets the full gallery treatment so future metadata work can grow by example instead of by guesswork.
+The first pass now covers eight assets: the original mascot art, avatar, sticker, wallpaper, and logo, plus three shared story images. The page above gives two assets the full gallery treatment and records the new trio as linked field notes so future metadata work can grow by example instead of by guesswork.
