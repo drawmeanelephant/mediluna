@@ -33,9 +33,9 @@ A profile is a snapshot, not a résumé: how someone works, what they care about
 *The quiet anchor · Lore profile*
 
 - **Working style:** Patient, spacious, and fond of questions that let a solution surface.
-- **Projects:** Knowledge graphs and improbable ideas, as described in the [Character Vision Inventory](../../cvi.html).
+- **Projects:** Knowledge graphs and improbable ideas, as described in the [Character Vision Inventory](cvi.html).
 - **What Uncle Gravity cares about:** He cares about giving a problem enough room to become legible. In the neighborhood, he is the mentor who asks whether the system is actually stuck—or simply asking for a quieter look.
-- **Evidence:** [Character Vision Inventory](../../cvi.html), with lore framing.
+- **Evidence:** [Character Vision Inventory](cvi.html), with lore framing.
 - **Related:** [A letter about patience](#a-letter-about-patience)
 
 ### Boris
@@ -55,7 +55,7 @@ A profile is a snapshot, not a résumé: how someone works, what they care about
 - **Working style:** Direct, methodical, and always checking whether the path still works.
 - **Projects:** Pull-request and repository work in the Mediluna collaboration story.
 - **What Codex cares about:** Codex cares about leaving a change reviewable: a focused diff, a checked build, and a clear handoff. The personality around that work is playful lore; the repository checks and commit history are the technical evidence.
-- **Repository work:** [CI baseline commit](https://github.com/drawmeanelephant/mediluna/commit/0abc3aa) · [Contribution guide](../../contributing.html)
+- **Repository work:** [CI baseline commit](https://github.com/drawmeanelephant/mediluna/commit/0abc3aa) · [Contribution guide](contributing.html)
 - **Related:** [Build receipt: the neighborhood opens](#build-receipt-the-neighborhood-opens)
 
 ---

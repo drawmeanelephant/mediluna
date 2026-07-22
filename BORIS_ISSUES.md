@@ -28,7 +28,7 @@ HTML blocks should remain raw HTML until their enclosing block is closed, or Bor
 
 Keep multiline HTML contiguous in Markdown sources. The Friends / Agents page uses that workaround in `content/friends/agents/index.md`.
 
-## Resolved locally: nested-page relative references in the CI checker
+## Open: nested-page relative references in the CI checker
 
 ### Observed behavior
 
@@ -38,9 +38,9 @@ The new `friends/agents/index.html` page generated correct relative navigation l
 
 Relative `href` and `src` values should be checked relative to the containing generated page, matching browser URL resolution.
 
-### Resolution in this repository
+### Current workaround
 
-Updated `scripts/ci-check.sh` to resolve relative references from `dirname "$file"`. This is a CI validation issue, not a Boris rendering issue, but it surfaced when Boris began emitting a nested route.
+Keep authored pages at the repository root until the checker resolves relative references from the containing page. This is a CI validation issue, not a Boris rendering issue, but it surfaced when Boris began emitting a nested route.
 
 ## Issue-report format
 
