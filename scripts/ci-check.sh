@@ -22,6 +22,11 @@ for path in \
   content/contributing.md \
   content/cvi.md \
   content/lore.md \
+  content/art-archive.md \
+  metadata/assets.json \
+  metadata/vocabulary.md \
+  content/art-archive.assets/mascot.png \
+  content/art-archive.assets/wallpaper_adventure.png \
   art/mascot.png \
   avatars/avatar_standard.png \
   stickers/sticker_got_this.png \
@@ -48,13 +53,18 @@ check_output() {
     dist/contributing.html \
     dist/cvi.html \
     dist/lore.html \
+    dist/art-archive.html \
     dist/index.css \
     dist/app.js \
     dist/art/mascot.png \
     dist/avatars/avatar_standard.png \
     dist/stickers/sticker_got_this.png \
     dist/wallpapers/wallpaper_adventure.png \
-    dist/logos/logo_simple.png
+    dist/logos/logo_simple.png \
+    dist/art-archive.assets/mascot.png \
+    dist/art-archive.assets/wallpaper_adventure.png \
+    dist/metadata/assets.json \
+    dist/metadata/vocabulary.md
   do
     check_file "$tmp_dir/$path"
   done

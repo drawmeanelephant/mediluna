@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "inspected_at": "2026-07-22",
+  "inspection_tool": "ExifTool 13.59 (read-only)",
+  "privacy": {
+    "published_fields": [
+      "title",
+      "creator",
+      "date_or_era",
+      "medium",
+      "dimensions",
+      "color_profile",
+      "source_provenance",
+      "license_usage_note",
+      "related_project",
+      "related_character"
+    ],
+    "excluded_fields": [
+      "GPS coordinates",
+      "device serial numbers",
+      "camera make/model",
+      "private filesystem paths",
+      "personal identifiers"
+    ],
+    "rule": "Only public, project-relevant metadata belongs in the archive. Sensitive device or location metadata is never copied into sidecars or page prose without explicit approval."
+  },
+  "assets": [
+    {
+      "path": "art/mascot.png",
+      "title": "Mediluna on the forest trail",
+      "creator": "Not recorded; Mediluna project asset",
+      "date_or_era": "Undated; initial 2026 repository asset set",
+      "medium": "Digital illustration, PNG",
+      "dimensions": "1024 × 1024 px",
+      "color_profile": "RGB; no embedded ICC profile reported",
+      "source_provenance": "Tracked asset at art/mascot.png; visual generation guidance recorded in prompt-history/generation_guide.md",
+      "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving; request permission before treating this as open-licensed artwork.",
+      "related_project": "Mediluna / Boris ecosystem",
+      "related_character": "Mediluna"
+    },
+    {
+      "path": "avatars/avatar_standard.png",
+      "title": "Mediluna standard profile avatar",
+      "creator": "Not recorded; Mediluna project asset",
+      "date_or_era": "Undated; initial 2026 repository asset set",
+      "medium": "Digital character portrait, PNG",
+      "dimensions": "1024 × 1024 px",
+      "color_profile": "RGB; no embedded ICC profile reported",
+      "source_provenance": "Tracked asset at avatars/avatar_standard.png; avatar prompt recorded in prompt-history/generation_guide.md",
+      "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
+      "related_project": "Mediluna / Boris ecosystem",
+      "related_character": "Mediluna"
+    },
+    {
+      "path": "stickers/sticker_got_this.png",
+      "title": "You Got This sticker",
+      "creator": "Not recorded; Mediluna project asset",
+      "date_or_era": "Undated; initial 2026 repository asset set",
+      "medium": "Digital sticker artwork, PNG",
+      "dimensions": "1024 × 1024 px",
+      "color_profile": "RGB; no embedded ICC profile reported",
+      "source_provenance": "Tracked asset at stickers/sticker_got_this.png; sticker prompt recorded in prompt-history/generation_guide.md",
+      "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
+      "related_project": "Mediluna / Boris ecosystem",
+      "related_character": "Mediluna"
+    },
+    {
+      "path": "wallpapers/wallpaper_adventure.png",
+      "title": "Mountain adventure wallpaper",
+      "creator": "Not recorded; Mediluna project asset",
+      "date_or_era": "Undated; initial 2026 repository asset set",
+      "medium": "Digital landscape illustration, PNG",
+      "dimensions": "1376 × 768 px",
+      "color_profile": "RGB; no embedded ICC profile reported",
+      "source_provenance": "Tracked asset at wallpapers/wallpaper_adventure.png; wallpaper prompt recorded in prompt-history/generation_guide.md",
+      "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
+      "related_project": "Mediluna / Boris ecosystem",
+      "related_character": "Mediluna"
+    },
+    {
+      "path": "logos/logo_simple.png",
+      "title": "Mediluna simple logo",
+      "creator": "Not recorded; Mediluna project asset",
+      "date_or_era": "Undated; initial 2026 repository asset set",
+      "medium": "Minimalist logo artwork, PNG",
+      "dimensions": "1024 × 1024 px",
+      "color_profile": "RGB; no embedded ICC profile reported",
+      "source_provenance": "Tracked asset at logos/logo_simple.png; logo prompt recorded in prompt-history/generation_guide.md",
+      "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
+      "related_project": "Mediluna / Boris ecosystem",
+      "related_character": "Mediluna"
+    }
+  ]
+}
