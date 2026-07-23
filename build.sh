@@ -5,6 +5,9 @@ set -e
 echo "🧸 Running Boris static content compiler..."
 ./bin/boris
 
+echo "🔐 Validating archival metadata..."
+./scripts/validate-metadata.sh "$(pwd)"
+
 echo "📂 Replicating brand assets and static files to dist/..."
 mkdir -p dist/art dist/stickers dist/wallpapers dist/avatars dist/logos dist/metadata
 

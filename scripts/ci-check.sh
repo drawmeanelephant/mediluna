@@ -17,6 +17,8 @@ for path in \
   build.sh \
   index.css \
   app.js \
+  scripts/validate-metadata.sh \
+  scripts/test-metadata.sh \
   layouts/main.html \
   content/index.md \
   content/contributing.md \
@@ -36,8 +38,12 @@ do
   check_file "$repo_root/$path"
 done
 
+"$repo_root/scripts/validate-metadata.sh" "$repo_root"
+"$repo_root/scripts/test-metadata.sh"
+
 # Build from a clean copy so ignored files and a previous dist/ cannot mask defects.
 tar -C "$repo_root" --exclude=.git -cf - . | tar -xf - -C "$tmp_dir"
+"$tmp_dir/scripts/validate-metadata.sh" "$tmp_dir"
 
 run_clean_build() {
   rm -rf "$tmp_dir/dist"
@@ -68,6 +74,10 @@ check_output() {
   do
     check_file "$tmp_dir/$path"
   done
+  cmp -s "$repo_root/metadata/assets.json" "$tmp_dir/dist/metadata/assets.json" || {
+    echo "generated metadata sidecar differs from source" >&2
+    exit 1
+  }
 }
 
 validate_internal_references() {

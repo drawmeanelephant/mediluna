@@ -1,9 +1,10 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "inspected_at": "2026-07-22",
   "inspection_tool": "ExifTool 13.59 (read-only)",
   "privacy": {
     "published_fields": [
+      "path",
       "title",
       "creator",
       "date_or_era",
@@ -13,7 +14,8 @@
       "source_provenance",
       "license_usage_note",
       "related_project",
-      "related_character"
+      "related_character",
+      "source_sha256"
     ],
     "excluded_fields": [
       "GPS coordinates",
@@ -22,8 +24,20 @@
       "private filesystem paths",
       "personal identifiers"
     ],
-    "rule": "Only public, project-relevant metadata belongs in the archive. Sensitive device or location metadata is never copied into sidecars or page prose without explicit approval."
+    "rule": "Only public, project-relevant metadata belongs in the archive. Sensitive device or location metadata is never copied into sidecars or page prose without explicit approval. CI enforces this allowlist and rejects unknown or sensitive fields."
   },
+  "page_local_copies": [
+    {
+      "source_path": "art/mascot.png",
+      "page_local_path": "content/art-archive.assets/mascot.png",
+      "sha256": "89d8e607e94af9e9ceb9808c4340634cd5881dfc9194d24f96d45bd0ffe06e4b"
+    },
+    {
+      "source_path": "wallpapers/wallpaper_adventure.png",
+      "page_local_path": "content/art-archive.assets/wallpaper_adventure.png",
+      "sha256": "8e09650880228707717280e21ab254d632532f490e3ea43f2fcf12b1ff6823af"
+    }
+  ],
   "assets": [
     {
       "path": "art/mascot.png",
@@ -36,7 +50,8 @@
       "source_provenance": "Tracked asset at art/mascot.png; visual generation guidance recorded in prompt-history/generation_guide.md",
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving; request permission before treating this as open-licensed artwork.",
       "related_project": "Mediluna / Boris ecosystem",
-      "related_character": "Mediluna"
+      "related_character": "Mediluna",
+      "source_sha256": "89d8e607e94af9e9ceb9808c4340634cd5881dfc9194d24f96d45bd0ffe06e4b"
     },
     {
       "path": "avatars/avatar_standard.png",
@@ -49,7 +64,8 @@
       "source_provenance": "Tracked asset at avatars/avatar_standard.png; avatar prompt recorded in prompt-history/generation_guide.md",
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
       "related_project": "Mediluna / Boris ecosystem",
-      "related_character": "Mediluna"
+      "related_character": "Mediluna",
+      "source_sha256": "dec89b31d3aab69a139732a22d7aac3c28cd53fc0c02a34f4c6b9b06515a6065"
     },
     {
       "path": "stickers/sticker_got_this.png",
@@ -62,7 +78,8 @@
       "source_provenance": "Tracked asset at stickers/sticker_got_this.png; sticker prompt recorded in prompt-history/generation_guide.md",
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
       "related_project": "Mediluna / Boris ecosystem",
-      "related_character": "Mediluna"
+      "related_character": "Mediluna",
+      "source_sha256": "8ef43292ebc1790446969d76186b2dcc190964527600924ad85f49e39de8a468"
     },
     {
       "path": "wallpapers/wallpaper_adventure.png",
@@ -75,7 +92,8 @@
       "source_provenance": "Tracked asset at wallpapers/wallpaper_adventure.png; wallpaper prompt recorded in prompt-history/generation_guide.md",
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
       "related_project": "Mediluna / Boris ecosystem",
-      "related_character": "Mediluna"
+      "related_character": "Mediluna",
+      "source_sha256": "8e09650880228707717280e21ab254d632532f490e3ea43f2fcf12b1ff6823af"
     },
     {
       "path": "logos/logo_simple.png",
@@ -88,7 +106,8 @@
       "source_provenance": "Tracked asset at logos/logo_simple.png; logo prompt recorded in prompt-history/generation_guide.md",
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving.",
       "related_project": "Mediluna / Boris ecosystem",
-      "related_character": "Mediluna"
+      "related_character": "Mediluna",
+      "source_sha256": "a9efb92ccc5a77402a07cb4b998f7506d063aa182abd9236ed4a554708862539"
     },
     {
       "path": "art/mediluna-hiking-forest.jpeg",
@@ -101,7 +120,8 @@
       "source_provenance": "Shared Mediluna artwork; tracked asset at art/mediluna-hiking-forest.jpeg",
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving; request permission before treating this as open-licensed artwork.",
       "related_project": "Mediluna / Boris ecosystem",
-      "related_character": "Mediluna"
+      "related_character": "Mediluna",
+      "source_sha256": "3ce099dd3b88dc8ab26cfb1f3054be41dbfcdbaa7a55b7168094604a9bfd6bb4"
     },
     {
       "path": "art/mediluna-trail-guide-umbrella.jpeg",
@@ -114,7 +134,8 @@
       "source_provenance": "Shared Mediluna artwork; tracked asset at art/mediluna-trail-guide-umbrella.jpeg",
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving; request permission before treating this as open-licensed artwork.",
       "related_project": "Mediluna / Boris ecosystem",
-      "related_character": "Mediluna and an unnamed trail robot"
+      "related_character": "Mediluna and an unnamed trail robot",
+      "source_sha256": "a052fac9c143055462fa8bf8329b4183682fcf5883f237010884bc681501fcca"
     },
     {
       "path": "art/mediluna-fish-cake-birthday.jpeg",
@@ -127,7 +148,8 @@
       "source_provenance": "Shared Mediluna artwork; tracked asset at art/mediluna-fish-cake-birthday.jpeg",
       "license_usage_note": "Artwork © its respective creators unless otherwise noted. Repository license is still evolving; request permission before treating this as open-licensed artwork.",
       "related_project": "Mediluna / Boris ecosystem",
-      "related_character": "Mediluna and Uncle Gravity"
+      "related_character": "Mediluna and Uncle Gravity",
+      "source_sha256": "6ec4ce1e1eeac490310acb4263ca492ab4c7d707e22e13c752e63053a5a9ca53"
     }
   ]
 }

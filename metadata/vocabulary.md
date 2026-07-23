@@ -15,6 +15,7 @@ This vocabulary is a small archival layer for public, project-relevant asset met
 - **`license_usage_note`** — Honest usage guidance; do not imply an open license that has not been granted.
 - **`related_project`** — The project or ecosystem context.
 - **`related_character`** — The character, mascot, or subject represented.
+- **`source_sha256`** — Lowercase SHA-256 of the tracked source asset, used to detect metadata drift.
 
 ## Privacy rules
 
@@ -24,9 +25,22 @@ This vocabulary is a small archival layer for public, project-relevant asset met
 4. Do not turn an absent field into a claim. Use “not recorded,” “undated,” or “not embedded.”
 5. Keep provenance public and reproducible: repository paths and checked-in prompt/history notes are preferred.
 
+## Enforcement
+
+`scripts/validate-metadata.sh` is the executable contract for this sidecar. It
+requires the exact published-field allowlist above (including `path` and
+`source_sha256`), rejects unknown or sensitive fields, requires every source
+asset to exist and match its declared SHA-256, and checks every declared
+page-local copy with both `cmp` and a SHA-256 comparison. Absolute paths,
+symlinks, traversal segments, and control characters are rejected.
+
+`scripts/test-metadata.sh` exercises a valid record plus rejected sensitive-field
+and page-local-drift fixtures. The normal build and CI check run both scripts;
+ExifTool remains an inspection aid and is not required at build time.
+
 ## Sidecar convention
 
-The canonical sidecar is `metadata/assets.json`. New assets should append a record using the fields above, keep JSON formatting deterministic, and include the inspection date and tool version when a metadata inspection materially informs the record.
+The canonical sidecar is `metadata/assets.json` (schema version `1.1`). New assets should append a record using exactly the fields above, keep JSON formatting deterministic, and include the inspection date and tool version when a metadata inspection materially informs the record. The `page_local_copies` list records temporary page-local mirrors and their source hashes so they cannot silently drift.
 
 ## Boris dogfood note
 
