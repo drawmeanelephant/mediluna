@@ -17,11 +17,18 @@ for path in \
   build.sh \
   index.css \
   app.js \
+  scripts/validate-metadata.sh \
+  scripts/test-metadata.sh \
   layouts/main.html \
   content/index.md \
   content/contributing.md \
   content/cvi.md \
   content/lore.md \
+  content/art-archive.md \
+  metadata/assets.json \
+  metadata/vocabulary.md \
+  content/art-archive.assets/mascot.png \
+  content/art-archive.assets/wallpaper_adventure.png \
   art/mascot.png \
   avatars/avatar_standard.png \
   stickers/sticker_got_this.png \
@@ -31,8 +38,12 @@ do
   check_file "$repo_root/$path"
 done
 
+"$repo_root/scripts/validate-metadata.sh" "$repo_root"
+"$repo_root/scripts/test-metadata.sh"
+
 # Build from a clean copy so ignored files and a previous dist/ cannot mask defects.
 tar -C "$repo_root" --exclude=.git -cf - . | tar -xf - -C "$tmp_dir"
+"$tmp_dir/scripts/validate-metadata.sh" "$tmp_dir"
 
 run_clean_build() {
   rm -rf "$tmp_dir/dist"
@@ -48,16 +59,25 @@ check_output() {
     dist/contributing.html \
     dist/cvi.html \
     dist/lore.html \
+    dist/art-archive.html \
     dist/index.css \
     dist/app.js \
     dist/art/mascot.png \
     dist/avatars/avatar_standard.png \
     dist/stickers/sticker_got_this.png \
     dist/wallpapers/wallpaper_adventure.png \
-    dist/logos/logo_simple.png
+    dist/logos/logo_simple.png \
+    dist/art-archive.assets/mascot.png \
+    dist/art-archive.assets/wallpaper_adventure.png \
+    dist/metadata/assets.json \
+    dist/metadata/vocabulary.md
   do
     check_file "$tmp_dir/$path"
   done
+  cmp -s "$repo_root/metadata/assets.json" "$tmp_dir/dist/metadata/assets.json" || {
+    echo "generated metadata sidecar differs from source" >&2
+    exit 1
+  }
 }
 
 validate_internal_references() {
