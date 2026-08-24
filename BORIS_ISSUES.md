@@ -28,11 +28,11 @@ The second `<div>` is emitted escaped inside `<pre><code>...</code></pre>`.
 
 The reproduction above does not reproduce as written on current Boris — verified on `afterparty` (`542959f`) and on the `bin/boris` binary pinned in this repo. The real edge is narrower: a blank line ends the HTML block, and any following line indented four or more spaces is then parsed as an indented code block and escaped. Indenting continuation lines three spaces or fewer renders as HTML again.
 
-Boris#206 asked for this interaction to be recorded as a Class-4 "surprising but intended" entry in `docs/contracts/fixtures/apex-unified-compat/MATRIX.md` or the HTML-block docs, since the discovery cost was non-trivial. CommonMark/GFM compatibility is an explicit non-goal there, so it closed as a docs request.
+Boris#206 asked for this interaction to be recorded as a Class-4 "surprising but intended" entry in `docs/contracts/fixtures/apex-unified-compat/MATRIX.md` or the HTML-block docs, since the discovery cost was non-trivial. CommonMark/GFM compatibility is an explicit non-goal there, so it closed as a docs request. The ask was fulfilled before close: boris commit `3563328` (2026-07-25, `docs(compat): record blank-line HTML block indentation as class 4`) added a 20-line Class-4 entry to that MATRIX.
 
 ### Current workaround
 
-Keep multiline HTML contiguous, or indent continuation lines three spaces or fewer. The Friends / Agents page uses the contiguous form in `content/friends-agents.md`.
+Keep multiline HTML contiguous, or indent continuation lines three spaces or fewer after a blank line. `content/index.md` and `content/contributing.md` each open a `<section>` at line 5 and keep their HTML blocks contiguous. `content/friends-agents.md` contains no raw HTML at all; an earlier revision of this note pointed at it in error.
 
 ## Open locally: nested-page relative references in the CI checker (mediluna#6)
 
@@ -48,7 +48,7 @@ Relative `href` and `src` values should be checked relative to the containing ge
 
 ### Investigation outcome (2026-08-24)
 
-Boris emission is correct: `docs/contracts/content-local-assets.md` specifies page-relative published URLs, and a nested `content/friends/agents/index.md` built with the pinned `bin/boris` emits links that resolve correctly from the containing page. The checker pools every `href`/`src` into one de-duplicated list and resolves all of them against `dist/`, so it rejects correct nested links (`broken internal reference: ../../art-archive.html`) and can mask broken ones. Details and a fix sketch: mediluna#6.
+Boris emission is correct: `docs/contracts/html-output.md` keeps emitted HTML target-relative by default ("navigation, theme assets, and content-local assets are emitted relative to the page that carries them"), and its §Site nav HTML normative shape emits `href="REL"` where `REL` is a site-relative path from the current page's output path. A nested `content/friends/agents/index.md` built with the pinned `bin/boris` emits links that resolve correctly from the containing page. The checker pools every `href`/`src` into one de-duplicated list and resolves all of them against `dist/`, so it rejects correct nested links (`broken internal reference: ../../art-archive.html`) and can mask broken ones. Details and a fix sketch: mediluna#6.
 
 ### Current workaround
 
