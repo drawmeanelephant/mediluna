@@ -28,6 +28,7 @@ She simply accompanies them.
 
 ```
 art/
+mascots/
 stickers/
 wallpapers/
 avatars/
@@ -35,9 +36,10 @@ logos/
 svg/
 social/
 prompt-history/
+metadata/
 ```
 
-This repository contains official artwork, prompts, brand assets, wallpapers, stickers, and reference material.
+This repository contains official artwork, prompts, brand assets, wallpapers, stickers, and reference material for Mediluna and the wider project mascot neighborhood. The `art/buildweek-2026/` collection preserves additional Mediluna imagery imported from the public OpenAI Build Week 2026 companion repository, including Boris/compiler scenes and migration-lab portraits.
 
 The local CI check is:
 
@@ -48,6 +50,10 @@ The local CI check is:
 It runs the checked-in Boris build from clean temporary copies, validates required page and character assets, checks generated internal references, and confirms deterministic output across two builds.
 
 ---
+
+## Mascot neighborhood
+
+Mediluna is the anchor character, but this archive is intentionally broad enough to serve the whole project family. Add each project’s mascot, visual references, and provenance here rather than scattering them across separate repositories. Existing friends and project characters are cataloged in [CVI.md](CVI.md), while imported imagery is listed in [the art archive](content/art-archive.md).
 
 ## Canon
 
@@ -79,6 +85,18 @@ Builder of pull requests.
 💬 **ChatGPT**
 
 Professional enabler of side quests.
+
+🐕 **Oliver**
+
+The good boy. Weimaraner mascot for the Oliver project.
+
+🐼 **Patch**
+
+A panda. Co-mascot for Rotkeeper.
+
+🧟 **Shikabane**
+
+A zombie. Primary mascot for Rotkeeper.
 
 ---
 

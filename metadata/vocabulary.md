@@ -40,7 +40,7 @@ ExifTool remains an inspection aid and is not required at build time.
 
 ## Sidecar convention
 
-The canonical sidecar is `metadata/assets.json` (schema version `1.1`). New assets should append a record using exactly the fields above, keep JSON formatting deterministic, and include the inspection date and tool version when a metadata inspection materially informs the record. The `page_local_copies` list records temporary page-local mirrors and their source hashes so they cannot silently drift.
+The canonical sidecar is `metadata/assets.json` (schema version `1.1`). New assets should append a record using exactly the fields above, keep JSON formatting deterministic, and include the inspection date and tool version when a metadata inspection materially informs the record. Imported assets should retain their original repository URL and a cautious usage note until licensing is explicitly confirmed. The `page_local_copies` list records temporary page-local mirrors and their source hashes so they cannot silently drift.
 
 ## Boris dogfood note
 
