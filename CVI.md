@@ -1,8 +1,16 @@
 # Character Vision Inventory (CVI)
 
-This document establishes the official Character Vision Inventory (CVI) for the Boris compiler ecosystem. Like a design system for pixels, the CVI governs the behavioral and visual consistency of the ecosystem's characters. 
+This document establishes the official Character Vision Inventory (CVI) for the mascot neighborhood. Like a design system for pixels, the CVI governs the behavioral and visual consistency of characters across the Boris ecosystem, Oliver, Rotkeeper, and any future projects.
 
-The goal is to ensure our mascots remain genuine reflections of the project's engineering culture, rather than shifting into Saturday morning cartoon characters.
+The goal is to ensure our mascots remain genuine reflections of each project's engineering culture, rather than shifting into Saturday morning cartoon characters.
+
+### Projects and Characters
+
+| Project | Character(s) | Directory |
+| --- | --- | --- |
+| Boris | Mediluna, Boris, Uncle Gravity, Codex | `art/`, `mascots/` |
+| Oliver | Oliver | `mascots/oliver/` |
+| Rotkeeper | Patch, Shikabane | `mascots/rotkeeper/` |
 
 ---
 
@@ -63,3 +71,69 @@ The goal is to ensure our mascots remain genuine reflections of the project's en
 ## ⚙️ Codex
 *Classified: Do not show this document to Codex.*
 **Role**: The serious, logical PR builder. Codex believes in graph invariants, allocator ownership audits, and strict compiler compliance. Codex assumes Boris and the team are actively reviewing allocator ownership while this CVI is being drafted.
+
+---
+
+## 🐕 Oliver
+**Role**: The good boy. Friendly, confident, and action-oriented. Oliver is the mascot for the Oliver project — a warm, direct presence who brings energy without noise.
+
+### Core Traits
+- **Warm and Confident**: Approaches everything with friendly self-assurance. Never pushy, always present.
+- **Action-Oriented**: Oliver doesn't overthink. He sees the ball, he goes for the ball.
+- **Loyal Companion**: Stays with the project through compiler warnings and broken builds alike.
+- **Playful but Grounded**: Can shift from a play bow to focused work without missing a beat.
+
+### Never
+- **Noisy or Aggressive**: Oliver is confident, not loud. He communicates with presence, not volume.
+- **Cynical or Sarcastic**: The world has enough cynical mascots. Oliver believes in the fetch.
+- **Generic**: Oliver is a Weimaraner with a specific look, not a placeholder dog.
+
+### Visual Signature
+- **Orange Collar Tag** (`#E44D26`): His signature signifier — compact, recognizable, ownable.
+- **Warm Grey Coat**: Weimaraner character, expressed through soft greys and taupe.
+- **Rounded Soft Forms**: Approachable and friendly proportions.
+- **Tail-Swish Ribbon**: An elegant orange curve derived from a wagging tail.
+- **Accessories**: Backpack, bandana, baseball cap, superhero cape, laptop.
+
+### Brand System
+Oliver has a full graphical equity system: colour palette (Oliver Orange, Charcoal, Warm Grey, Medium Taupe, Off-White), typography (Poppins + Inter), and graphic devices (portrait crop, orange tag, tail-swish ribbon, soft biomorphic shapes, warm porthole). See `mascots/oliver/Oliver_Graphical_Equity_Guide.md` and `mascots/oliver/Oliver the Good Boy — Colour Palette & Typography Guide.md`.
+
+### Recurring Themes & Gags
+- **Accessory Rotations**: Different hat or cape for different moods.
+- **Expression Library**: From winking to play bow to looking up hopefully.
+- **Social Templates**: Ready-made feed and story layouts.
+- **Crossover Camping**: Appears with Patch (the panda) in shared scenes.
+
+---
+
+## 🐼 Patch
+**Role**: The panda of Rotkeeper. Patch is one of two Rotkeeper mascots and appears in crossover scenes with Oliver.
+
+### Core Traits
+- **TBD**: Character profile to be fleshed out as Rotkeeper develops.
+
+### Visual Signature
+- **Panda**: Black and white bear.
+- **Camping Companion**: Seen in outdoor/crossover scenes with Oliver.
+
+### Recurring Themes
+- **Crossover Camping**: Joint camping scenes with Oliver.
+
+---
+
+## 🧟 Shikabane
+**Role**: The zombie of Rotkeeper. Shikabane is the primary Rotkeeper mascot, appearing in atmospheric, story-driven scene illustrations.
+
+### Core Traits
+- **TBD**: Character profile to be fleshed out as Rotkeeper develops.
+
+### Visual Signature
+- **Zombie**: Undead character.
+- **Atmospheric Settings**: Moonlit libraries, gardens, potion workshops, campfires.
+
+### Scene Illustrations
+Shikabane appears in four scene illustrations plus a splash portrait:
+- Moonlit library
+- Garden caretaker
+- Potion workshop
+- Campfire story

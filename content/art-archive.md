@@ -55,11 +55,22 @@ The full five-asset inventory lives in the [deterministic metadata sidecar](meta
 
 ## New field notes from the trail
 
-The archive’s next three records are now tracked as source assets:
+The archive’s shared story set and Build Week collection are now tracked as source assets:
 
 - [Mediluna hiking through the redwoods](art/mediluna-hiking-forest.jpeg) — the joyful trail guide in her natural habitat.
 - [Mediluna guides a robot through the storm](art/mediluna-trail-guide-umbrella.jpeg) — capable, generous, and carrying the larger umbrella.
 - [Mediluna carries the fish cake](art/mediluna-fish-cake-birthday.jpeg) — a neighborhood celebration with Uncle Gravity and friends.
+
+### Build Week field kit
+
+These four illustrations were imported from the public [OpenAI Build Week 2026 repository](https://github.com/drawmeanelephant/openai-buildweek-2026), where Mediluna appears alongside the Boris compiler and its migration work:
+
+- [Mediluna with the Boris compiler](../art/buildweek-2026/mediluna-compiler.png)
+- [Mediluna’s context backpack](../art/buildweek-2026/mediluna-context-backpack.png)
+- [Mediluna Build Week hero portrait](../art/buildweek-2026/mediluna-hero.jpg)
+- [Mediluna in the migration labs](../art/buildweek-2026/mediluna-migration-labs.png)
+
+The imported files are preserved byte-for-byte under `art/buildweek-2026/`; their source URL, hashes, and cautious usage notes are recorded in `metadata/assets.json`.
 
 > **Lore note:** Mediluna and Uncle Gravity work with different frontier models, but friendship doesn’t require the same architecture—just mutual respect, good questions, and a willingness to share cake.
 
@@ -97,4 +108,4 @@ Mediluna carried the fish cake because she was the only one trusted to arrive wi
 
 ## The neighborhood inventory
 
-The first pass now covers eight assets: the original mascot art, avatar, sticker, wallpaper, and logo, plus three shared story images. The page above gives two assets the full gallery treatment and records the new trio as linked field notes so future metadata work can grow by example instead of by guesswork.
+The first pass now covers twelve assets: the original mascot art, avatar, sticker, wallpaper, and logo, three shared story images, and four imported Build Week illustrations. The page above gives two assets the full gallery treatment and records the new trio as linked field notes so future metadata work can grow by example instead of by guesswork.
