@@ -65,10 +65,10 @@ The archive’s shared story set and Build Week collection are now tracked as so
 
 These four illustrations were imported from the public [OpenAI Build Week 2026 repository](https://github.com/drawmeanelephant/openai-buildweek-2026), where Mediluna appears alongside the Boris compiler and its migration work:
 
-- [Mediluna with the Boris compiler](../art/buildweek-2026/mediluna-compiler.png)
-- [Mediluna’s context backpack](../art/buildweek-2026/mediluna-context-backpack.png)
-- [Mediluna Build Week hero portrait](../art/buildweek-2026/mediluna-hero.jpg)
-- [Mediluna in the migration labs](../art/buildweek-2026/mediluna-migration-labs.png)
+- [Mediluna with the Boris compiler](art/buildweek-2026/mediluna-compiler.png)
+- [Mediluna’s context backpack](art/buildweek-2026/mediluna-context-backpack.png)
+- [Mediluna Build Week hero portrait](art/buildweek-2026/mediluna-hero.jpg)
+- [Mediluna in the migration labs](art/buildweek-2026/mediluna-migration-labs.png)
 
 The imported files are preserved byte-for-byte under `art/buildweek-2026/`; their source URL, hashes, and cautious usage notes are recorded in `metadata/assets.json`.
 
