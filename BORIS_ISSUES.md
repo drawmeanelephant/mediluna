@@ -52,7 +52,7 @@ Boris emission is correct: `docs/contracts/html-output.md` keeps emitted HTML ta
 
 ### Current workaround
 
-Keep authored pages at the repository root until mediluna#6 lands. This workaround is load-bearing: it is currently the only thing keeping a nested-route build green in CI.
+Until the per-page reference checker landed (mediluna#6), authored pages had to stay at the repository root: the checker rejected correct nested links, and keeping pages flat was the only way to keep a nested-route build green in CI.
 
 ## Issue-report format
 
