@@ -52,7 +52,7 @@ Boris emission is correct: `docs/contracts/html-output.md` keeps emitted HTML ta
 
 ### Current workaround
 
-Until the per-page reference checker landed (mediluna#6), authored pages had to stay at the repository root: the checker rejected correct nested links, and keeping pages flat was the only way to keep a nested-route build green in CI.
+Until the per-page reference checker landed (mediluna#6), authored pages had to stay at the repository root: the checker rejected correct nested links, and keeping pages flat was the only way to keep a nested-route build green in CI. Nested routes now pass the reference checker itself, but a fully nested route still needs `layouts/main.html` to emit page-resolvable theme-asset references (`index.css`, `app.js`, `logos/...` are emitted verbatim today) — flagged as follow-up work, not part of the checker fix.
 
 ## Issue-report format
 
