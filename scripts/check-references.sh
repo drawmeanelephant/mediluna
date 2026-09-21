@@ -11,10 +11,13 @@
 # Query strings and fragments are stripped before the existence check, and
 # empty references, pure fragments, and external schemes are skipped.
 #
-# Dot segments are collapsed lexically (RFC 3986 §5.2.4). A reference that
-# pops above the site root is rejected without touching the filesystem, so
-# the checker never depends on what happens to sit next to the generated
-# tree (or outside it).
+# Dot segments are collapsed lexically (RFC 3986 §5.2.4), relative to the
+# site root. A reference that pops above the site root is rejected without
+# touching the filesystem, so the checker never depends on what happens to
+# sit next to the generated tree (or outside it) and its verdict cannot
+# vary with the depth of the directory it runs in. This is deliberately
+# stricter than browser clamping: in a deployed static site nothing exists
+# above the tree, so a root page linking "../x" is an authoring error.
 #
 # Diagnostics name the containing page (relative to <dist-root>) so a
 # failure can be located without re-deriving which page held the reference.
@@ -36,21 +39,15 @@ report_broken() { # <page-relative> <reference> <reason>
   failures=$((failures + 1))
 }
 
-# normalize <abs-base> <reference-path> — lexically resolves the reference
-# against <abs-base>; sets _norm to the absolute result and _escapes to the
-# number of ".." segments that popped above the site root. A nonzero
-# _escapes means the reference leaves the generated tree; the caller
-# rejects it without an exists-check.
+# normalize <rel-path> — collapses dot segments in <rel-path>, which is
+# relative to the site root; sets _norm_rel to the normalized relative
+# path ('' meaning the site root itself) and _escapes to the number of
+# ".." segments that popped above the site root.
 normalize() {
-  local base=$1 ref=$2 acc='' seg escapes=0
+  local rel=$1 acc='' seg escapes=0
   local IFS=/
-  local p
-  case $ref in
-    /*) p="$base$ref" ;;   # site-root-relative: base is the site root
-    *)  p="$base/$ref" ;;  # relative to the containing page
-  esac
   set -f
-  for seg in $p; do
+  for seg in $rel; do
     case $seg in
       ''|.) ;;
       ..)
@@ -64,16 +61,16 @@ normalize() {
     esac
   done
   set +f
-  _norm=$acc
+  _norm_rel=$acc
   _escapes=$escapes
 }
 
 check_page() { # <abs-page>
   local page=$1
   local page_rel=${page#"$dist_root"/}
-  local base
-  base=$(dirname -- "$page")
-  local ref path
+  local base_rel
+  base_rel=$(dirname -- "$page_rel")
+  local ref path rel
   while IFS= read -r ref; do
     case $ref in
       ''|\#*|http://*|https://*|//*|mailto:*|javascript:*|data:*) continue ;;
@@ -82,15 +79,23 @@ check_page() { # <abs-page>
     path=${path%%\#*}
     [ -n "$path" ] || continue
     case $path in
-      /*) normalize "$dist_root" "$path" ;;   # site-root-relative
-      *)  normalize "$base" "$path" ;;        # relative to the page
+      /*) rel=${path#/} ;;                   # site-root-relative
+      .) rel=$base_rel ;;
+      *)
+        if [ "$base_rel" = "." ]; then
+          rel=$path                          # page at the site root
+        else
+          rel="$base_rel/$path"              # relative to the page
+        fi
+        ;;
     esac
+    normalize "$rel"
     if [ "$_escapes" -gt 0 ]; then
-      report_broken "$page_rel" "$ref" "escapes the generated tree by $_escapes level(s)"
-    elif [ "$_norm" = "$dist_root" ]; then
+      report_broken "$page_rel" "$ref" "escapes the site root by $_escapes level(s)"
+    elif [ -z "$_norm_rel" ]; then
       report_broken "$page_rel" "$ref" "resolves to the site root, not a file"
-    elif [ ! -f "$_norm" ]; then
-      report_broken "$page_rel" "$ref" "target not found: ${_norm#"$dist_root"/}"
+    elif [ ! -f "$dist_root$_norm_rel" ]; then
+      report_broken "$page_rel" "$ref" "target not found: ${_norm_rel#/}"
     fi
   done < <(
     { grep -Eo '(href|src)="[^"]+"' "$page" || true; } |

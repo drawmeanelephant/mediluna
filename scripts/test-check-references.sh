@@ -6,8 +6,8 @@
 #   - a nested link whose text is only valid at root fails and names its page
 #   - root-relative /... references resolve from the site root
 #   - fragment and query suffixes are stripped before checking
-#   - references escaping the tree clamp at the root and never consult files
-#     that merely sit next to the generated tree
+#   - references escaping the site root are rejected lexically and never
+#     consult files that sit outside or next to the generated tree
 set -euo pipefail
 
 repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
@@ -80,11 +80,28 @@ printf '<a href="missing.html#anchor">m</a>' > "$tmp_dir/site/friends/agents/fra
 expect_fail "fragment suffix still checks the path" "$tmp_dir/site" "friends/agents/fragment-broken.html"
 rm "$tmp_dir/site/friends/agents/fragment-broken.html"
 
-# --- escape clamping: nothing outside the tree is consulted -----------------
+# --- escapes are rejected lexically: nothing outside the tree is consulted --
 printf 'DECOY\n' > "$tmp_dir/outside.html"
 printf '<a href="../../../../../outside.html">esc</a>' > "$tmp_dir/site/friends/agents/escape.html"
-expect_fail "excess ../ clamps at root and fails" "$tmp_dir/site" "friends/agents/escape.html"
+expect_fail "excess ../ fails" "$tmp_dir/site" "friends/agents/escape.html"
 rm "$tmp_dir/site/friends/agents/escape.html"
 # The decoy must still be untouched: the checker never resolved to it.
 
-echo "Reference fixtures passed: nested resolution, root-relative, fragment/query stripping, and escape clamping."
+# --- escape detection must not depend on the depth of the temp dir ----------
+# Pops that exactly consume the site-root prefix are the hard case: a checker
+# that resolves against absolute filesystem paths lands OUTSIDE the tree
+# instead of counting an escape, and its verdict then depends on whatever
+# happens to sit next to the generated tree. The decoys below EXIST in those
+# landing spots; rejection must still be lexical.
+mkdir -p "$tmp_dir/shallow/sub"
+printf '<a href="../../decoy.html">esc</a>' > "$tmp_dir/shallow/sub/page.html"
+printf 'DECOY\n' > "$tmp_dir/decoy.html"      # exactly where the pops land
+expect_fail "relative escape landing beside the tree" "$tmp_dir/shallow" "sub/page.html"
+printf '<a href="/../../decoy.html">esc</a>' > "$tmp_dir/shallow/sub/page.html"
+expect_fail "root-relative escape above the tree" "$tmp_dir/shallow" "sub/page.html"
+# Overshoot case: pops beyond the root must count as escapes too.
+printf '<a href="../../../decoy.html">esc</a>' > "$tmp_dir/shallow/sub/page.html"
+expect_fail "escape detection is depth-independent" "$tmp_dir/shallow" "sub/page.html"
+rm -r "$tmp_dir/shallow"
+
+echo "Reference fixtures passed: nested resolution, root-relative, fragment/query stripping, and lexical escape rejection."
