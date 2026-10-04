@@ -40,6 +40,7 @@ done
 
 "$repo_root/scripts/validate-metadata.sh" "$repo_root"
 "$repo_root/scripts/test-metadata.sh"
+"$repo_root/scripts/test-check-references.sh"
 
 # Build from a clean copy so ignored files and a previous dist/ cannot mask defects.
 tar -C "$repo_root" --exclude=.git -cf - . | tar -xf - -C "$tmp_dir"
@@ -80,30 +81,11 @@ check_output() {
   }
 }
 
+# Per-page resolution (mediluna#6): every reference is checked relative to
+# the page carrying it, mirroring browser URL resolution; fixtures for the
+# resolution rules live in scripts/test-check-references.sh.
 validate_internal_references() {
-  local ref path target file
-  while IFS= read -r ref; do
-    case "$ref" in
-      ""|\#*|http://*|https://*|//*|mailto:*|javascript:*|data:*) continue ;;
-    esac
-    path=${ref%%\?*}
-    path=${path%%\#*}
-    [ -n "$path" ] || continue
-    case "$path" in
-      /*) target="$tmp_dir/dist$path" ;;
-      *) target="$tmp_dir/dist/$path" ;;
-    esac
-    if [ ! -f "$target" ]; then
-      echo "broken internal reference: $ref" >&2
-      exit 1
-    fi
-  done < <(
-    while IFS= read -r file; do
-      grep -Eo '(href|src)="[^"]+"' "$file" || true
-    done < <(find "$tmp_dir/dist" -type f -name '*.html' -print) |
-      sed -E 's/.*(href|src)="([^"]+)"/\2/' |
-      sort -u
-  )
+  "$repo_root/scripts/check-references.sh" "$tmp_dir/dist"
 }
 
 hash_output() {
